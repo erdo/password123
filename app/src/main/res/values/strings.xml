@@ -3,43 +3,53 @@
     <string name="hint">Enter Password</string>
     <string name="network_warning">Low Network - Offline Check Only</string>
     <string name="powered_by">powered by haveibeenpwned.com</string>
+    <string name="help">Help</string>
     <string name="password_manager">If that all seems like too much effort, I don\'t blame you.
         The best solution is probably to invest in a password manager (I suspect it\'s what most
-        security professionals do). Click here to search for one.</string>
+        security professionals do). Click this card to search for one.</string>
     <string name="about_tech">When you enter a password into Password123, the first thing the app does is
         to convert your password into a one-way hash (a one-way hash is random looking text which is
         difficult to reverse back to the original password - hence "one-way"). Your password is
         still visible to you on the front page though, so be careful that no one is looking over
         your shoulder!\n\n
-        From that point on, the rest of the password checking system is only told about your hash.\n\n
+        From that point on, the rest of the password checking system is only told about your password
+        hash, not your full password.\n\n
         The first check that Password123 does is to look in a list of the 10,000 most common exposed
         password hashes. This list is stored in the app itself, so it\'s very quick to check and you
         can still use this feature even when you have no internet connection on your phone.\n\n
         It goes without saying that any password found in that list is extremely insecure and should
         be changed immediately.\n\n
-        If Password123 was not able to find your password hash in that list, then so far so good! Next
+        If Password123 was not able to find your password hash in that list, then so far so good!\n\n Next
         it will try to access the internet to check the main haveibeenpwned.com database (that\'s not
-        a typo, hackers like to use the letter p instead of o, go figure).
+        a typo, hackers like to use the letter p instead of o, go figure). \n\n
+        haveibeenpwned.com is not run by a hacker by the way, it is run by Troy Hunt who is a very well
+        known security professional who works for Microsoft and tours the globe speaking
+        about internet security. The site is continuously updated and exists so that people can
+        check if their personal data has been breached somewhere on the internet. I recommend you
+        take a look at the site, it\'s illuminating to say the least.\n\n
         The haveibeenpwned.com database has hashed passwords from about 5 billion(!) accounts that
-        have been exposed by hackers in the past. You really don't want to have a password which is
+        have been exposed by hackers in the past. You really don\'t want to have a password which is
         the same as one on that list. But if you do, the app will let you know immediately so that
         you can change it.\n\n
         So that not even the ihavebeenpwned.com service knows what password hash you are checking,
-        the Password123 app uses the k-anonymity API. Basically only the first few characters of
-        the password hash ever leave your phone, the haveibeenpwned services replies with all the
-        possible matches in it\'s database (usually a few hundred or so). The Password123 app is the
+        the Password123 app uses the k-anonymity API. Basically this means that only the
+        first few characters of
+        your password hash ever leave your phone, the haveibeenpwned service replies with all the
+        possible matches in it\'s password hash database (usually a few hundred or so).\n\n
+        The Password123 app is the
         only part of the system that knows the full password hash, and it checks for a match among the
-        few hundred results returned from the haveibeenpwned service itself. The haveibeenpwned service
-        never knows which of those hundreds of results returned matched your password - if indeed any
+        few hundred results returned to it from the haveibeenpwned service itself. \n\n The
+        haveibeenpwned service
+        never knows which of those hundreds of results returned, matched your password - if indeed any
         of them did.</string>
     <string name="licences">Password123 is an open source Android app written in Kotlin, the source is
-        available here: https://github.com/erdo/password123. The app makes use of these third party
+        available here: https://github.com/erdo/password123 \n\n The app makes use of these third party
         libraries and services:
-        \n - haveibeenpwned.com see: https://haveibeenpwned.com/API/v2#PwnedPasswords
-        \n - OkHttp see: https://github.com/square/okhttp
-        \n - pwned4android see: https://github.com/erdo/pwned4android
-        \n - ASAF see: https://github.com/erdo/asaf-project
-        \n - icons see: https://material.io/icons/
+        \n\n haveibeenpwned \n see: https://haveibeenpwned.com/API/v2#PwnedPasswords
+        \n\n OkHttp \n see: https://github.com/square/okhttp
+        \n\n pwned4android \n see: https://github.com/erdo/pwned4android
+        \n\n ASAF \n see: https://github.com/erdo/asaf-project
+        \n\n icons \n see: https://material.io/icons/
     </string>
 
 </resources>
