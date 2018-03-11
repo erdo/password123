@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<co.early.password123.ui.about.AboutView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="0dp"
+    android:background="@drawable/about_background_gradient"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/about_info_img"
+            android:layout_width="@dimen/about_icon_size"
+            android:layout_height="@dimen/about_icon_size"
+            android:padding="@dimen/common_space_medium"
+            android:src="@drawable/info_outline_black"
+            android:tint="@color/colorAccent" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/about_key_card"
+            style="@style/CustomCardLayout"
+            card_view:cardCornerRadius="@dimen/common_space_small"
+            card_view:cardElevation="@dimen/common_space_tiny">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/about_tooshort_cardlinetxt"
+                    layout="@layout/common_cardline_text" />
+
+                <include
+                    android:id="@+id/about_pwned_cardlinetxt"
+                    layout="@layout/common_cardline_text" />
+
+                <include
+                    android:id="@+id/about_unknown_cardlinetxt"
+                    layout="@layout/common_cardline_text" />
+
+                <include
+                    android:id="@+id/about_potentiallyok_cardlinetxt"
+                    layout="@layout/common_cardline_text" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/about_pmanager_card"
+            style="@style/CustomCardLayout"
+            android:clickable="true"
+            card_view:cardCornerRadius="@dimen/common_space_small"
+            card_view:cardElevation="@dimen/common_space_tiny">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/about_pmanager_cardlineimg"
+                    layout="@layout/common_cardline_img" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/about_tech_card"
+            style="@style/CustomCardLayout"
+            android:clickable="true"
+            card_view:cardCornerRadius="@dimen/common_space_small"
+            card_view:cardElevation="@dimen/common_space_tiny">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/about_tech_cardlineimg"
+                    layout="@layout/common_cardline_img" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/about_licence_card"
+            style="@style/CustomCardLayout"
+            card_view:cardCornerRadius="@dimen/common_space_small"
+            card_view:cardElevation="@dimen/common_space_tiny">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/about_licence_cardlineimg"
+                    layout="@layout/common_cardline_img" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</co.early.password123.ui.about.AboutView>

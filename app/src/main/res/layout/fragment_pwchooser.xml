@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<co.early.password123.ui.passwordchooser.PwChooserView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="0dp"
+    android:background="@drawable/main_background_gradient"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/pwchoose_warningbackground_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccentFaded" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:id="@+id/pwchoose_cloud_img"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_alignEnd="@id/pwchoose_password_edittext"
+                android:padding="@dimen/common_space_small"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/network_gone_black"
+                android:tint="@color/colorAccent" />
+
+            <EditText
+                android:id="@+id/pwchoose_password_edittext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/pwchoose_cloud_img"
+                android:layout_marginEnd="@dimen/common_space_medium_large"
+                android:layout_marginStart="@dimen/common_space_medium_large"
+                android:background="@drawable/edit_password_background"
+                android:hint="@string/hint"
+                android:imeOptions="flagNoExtractUi"
+                android:importantForAutofill="no"
+                android:inputType="textVisiblePassword"
+                android:maxLines="1"
+                android:minEms="15"
+                android:padding="@dimen/common_space_medium"
+                android:textColor="@color/colorPW123GreyDark"
+                android:textSize="@dimen/common_textsize_medium" />
+
+            <co.early.password123.ui.common.PercentBar
+                android:id="@+id/pwchoose_initbar_animatedprogbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_space_small"
+                android:layout_margin="@dimen/common_space_medium"
+                android:layout_alignEnd="@id/pwchoose_password_edittext"
+                android:layout_alignStart="@id/pwchoose_password_edittext"
+                android:layout_below="@id/pwchoose_password_edittext" />
+
+            <ImageView
+                android:id="@+id/pwchoose_info_img"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_alignEnd="@id/pwchoose_password_edittext"
+                android:layout_below="@id/pwchoose_password_edittext"
+                android:padding="@dimen/common_space_small"
+                android:src="@drawable/info_outline_black"
+                android:tint="@color/colorAccent" />
+
+            <ProgressBar
+                android:id="@+id/pwchoose_busy_progressbar"
+                android:layout_width="@dimen/icon_size"
+                android:layout_height="@dimen/icon_size"
+                android:layout_alignEnd="@id/pwchoose_password_edittext"
+                android:layout_below="@id/pwchoose_password_edittext"
+                android:indeterminate="true"
+                android:padding="@dimen/common_space_small"
+                android:progressTint="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/pwchoose_debug_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/pwchoose_password_edittext"
+                android:layout_toStartOf="@+id/pwchoose_cloud_img"
+                android:layout_below="@id/pwchoose_password_edittext"
+                android:layout_gravity="start"
+                android:layout_marginEnd="@dimen/common_space_medium"
+                android:layout_marginStart="@dimen/common_space_medium"
+                android:layout_marginTop="@dimen/common_space_small"
+                android:maxLines="4"
+                android:minLines="4"
+                android:textColor="@color/colorPW123GreyDark"
+                android:textSize="@dimen/common_textsize_small" />
+
+            <LinearLayout
+                android:id="@+id/pwchoose_warning_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/pwchoose_password_edittext"
+                android:layout_below="@id/pwchoose_password_edittext"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/common_space_medium"
+                android:maxWidth="@dimen/common_space_extra_large"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/common_space_small">
+
+                <TextView
+                    android:id="@+id/pwchoose_warning_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/common_textsize_small"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/pwchoose_warningdetail_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/common_textsize_small" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/pwchoose_poweredby_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:textColor="@color/colorPW123GreyDark"
+            android:layout_margin="@dimen/common_space_small"
+            android:textSize="@dimen/common_textsize_small"
+            android:text="@string/powered_by"
+            android:textStyle="italic"/>
+
+
+    </RelativeLayout>
+
+</co.early.password123.ui.passwordchooser.PwChooserView>

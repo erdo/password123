@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<co.early.password123.ui.about.CardLineImage xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/common_space_small">
+
+    <ImageView
+        android:id="@+id/aboutcardline_imgicon_imgview"
+        android:layout_width="@dimen/about_icon_size"
+        android:layout_height="@dimen/about_icon_size"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="@dimen/common_space_medium"/>
+
+    <TextView
+        android:id="@+id/aboutcardline_text_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="@dimen/common_space_medium"
+        android:textStyle="italic" />
+
+</co.early.password123.ui.about.CardLineImage>

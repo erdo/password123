@@ -1,0 +1,19 @@
+<resources>
+
+    <dimen name="common_textsize_small">12sp</dimen>
+    <dimen name="common_textsize_medium">17sp</dimen>
+
+    <dimen name="common_space_tiny">2dp</dimen>
+    <dimen name="common_space_small">5dp</dimen>
+    <dimen name="common_space_medium">10dp</dimen>
+    <dimen name="common_space_medium_large">40dp</dimen>
+    <dimen name="common_space_extra_large">200dp</dimen>
+
+    <dimen name="icon_size">65dp</dimen>
+    <dimen name="edittext_radius">65dp</dimen>
+
+    <dimen name="about_icon_size">100dp</dimen>
+    <dimen name="about_card_icon_size">65dp</dimen>
+
+
+</resources>

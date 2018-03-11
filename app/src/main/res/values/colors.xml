@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#515673</color>
+    <color name="colorPrimaryDark">#ff512f</color>
+    <color name="colorAccent">#ff512f</color>
+    <color name="colorAccentFaded">#33ff512f</color>
+
+    <color name="colorPW123Blackish">#333333</color>
+    <color name="colorPW123WhiteIsh">#FDFDFD</color>
+    <color name="colorPW123GreyLight">#EAEAEA</color>
+    <color name="colorPW123Grey">#E0E0E0</color>
+    <color name="colorPW123GreyDark">#666666</color>
+
+    <color name="colorPW123Transparent">#00FFFFFF</color>
+
+    <color name="colorPW123Severity0">@color/colorPrimary</color>
+    <color name="colorPW123Severity1">#937616</color>
+    <color name="colorPW123Severity2">#B6510A</color>
+    <color name="colorPW123Severity3">#A50056</color>
+
+    <color name="colorPW123Blue">#0015FF</color>
+    <color name="colorPW123BlueDeep">#0006D3</color>
+
+</resources>
