@@ -1,14 +1,9 @@
 package co.early.password123.ui.common;
 
 import android.app.Activity;
-import android.app.ActivityOptions;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Pair;
-import android.view.View;
 
 import co.early.password123.CustomApp;
 import co.early.password123.R;
@@ -16,28 +11,11 @@ import co.early.password123.R;
 
 public abstract class BaseActivity extends Activity {
 
-    public static void startWithTransition(Activity activity, Pair<View, String>... sharedElements) {
-        Intent intent = build(activity);
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(activity, sharedElements);
-        activity.startActivity(intent, options.toBundle());
-    }
-
-    public static void start(Context context) {
-        Intent intent = build(context);
-        context.startActivity(intent);
-    }
-
-    public static Intent build(Context context) {
-        Intent intent = new Intent(context, BaseActivity.class);
-        return intent;
-    }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-       // overridePendingTransition(0, 0);
+//        overridePendingTransition(0, 0);
 
         CustomApp.init();
 
@@ -47,9 +25,8 @@ public abstract class BaseActivity extends Activity {
             setFragment(getFragmentInstance(), getFragmentTag());
         }
 
-      //  TransitionUtils.postponeTransition(this);
-
-       // initialiseActivityTransition();
+//        TransitionUtils.postponeTransition(this);
+//        initialiseActivityTransition();
     }
 
     private void setFragment(Fragment fragment, String fragmentTag) {
@@ -66,7 +43,7 @@ public abstract class BaseActivity extends Activity {
 
     /* Protected to allow subclasses to override with their own transition if needed. */
     protected void initialiseActivityTransition() {
-        TransitionUtils.setupSubLevelActivityTransitions(getWindow());
+        TransitionUtils.setupActivityTransitions1(getWindow());
     }
 
 }

@@ -2,7 +2,6 @@ package co.early.password123.ui.passwordchooser;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Pair;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -22,7 +21,6 @@ import co.early.password123.feature.networkmonitor.NetworkState;
 import co.early.password123.ui.about.AboutActivity;
 import co.early.password123.ui.common.PercentBar;
 import co.early.password123.ui.common.TextWatcherCheckPassword;
-import co.early.password123.ui.common.ViewUtils;
 import co.early.pwned.Pwned;
 import co.early.pwned.feature.PwnedResult;
 
@@ -133,7 +131,8 @@ public class PwChooserView extends ScrollView implements SyncableView{
         infoIcon.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                AboutActivity.startWithTransition(ViewUtils.getActivityFromContext(getContext()), Pair.create(infoIcon, "about_info_img"));
+                AboutActivity.start(getContext());
+                //AboutActivity.startWithTransition(ViewUtils.getActivityFromContext(getContext()), Pair.create(infoIcon, "about_info_img"));
             }
         });
     }

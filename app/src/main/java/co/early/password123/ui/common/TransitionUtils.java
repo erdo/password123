@@ -11,27 +11,17 @@ import android.view.Window;
 
 public class TransitionUtils {
 
-    private static Slide slideRightEdge = new Slide();
-    private static Slide slideLeftEdge = new Slide();
+    private static Slide slideTopEdge = new Slide();
+    private static Slide slideBottomEdge = new Slide();
     private static Fade fade = new Fade();
-    private static Slide slide = new Slide();
 
 
     static {
-        slideRightEdge.setSlideEdge(Gravity.RIGHT);
-        slideLeftEdge.setSlideEdge(Gravity.LEFT);
+        slideTopEdge.setSlideEdge(Gravity.TOP);
+        slideBottomEdge.setSlideEdge(Gravity.BOTTOM);
 
-        fade.excludeTarget(android.R.id.statusBarBackground, true);
-        fade.excludeTarget(android.R.id.navigationBarBackground, true);
-     //   fade.excludeTarget(R.id.toolbar, true);
-
-        slideRightEdge.excludeTarget(android.R.id.statusBarBackground, true);
-        slideRightEdge.excludeTarget(android.R.id.navigationBarBackground, true);
-     //   slideRightEdge.excludeTarget(R.id.toolbar, true);
-
-        slideLeftEdge.excludeTarget(android.R.id.statusBarBackground, true);
-        slideLeftEdge.excludeTarget(android.R.id.navigationBarBackground, true);
-     //   slideLeftEdge.excludeTarget(R.id.toolbar, true);
+//        fade.excludeTarget(android.R.id.statusBarBackground, true);
+//        fade.excludeTarget(R.id.toolbar, true);
     }
 
 
@@ -55,7 +45,7 @@ public class TransitionUtils {
     }
 
 
-    public static void setupTopLevelActivityTransitions(Window window) {
+    public static void setupActivityTransitions1(Window window) {
 
         //window.requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
 
@@ -64,48 +54,10 @@ public class TransitionUtils {
         window.setExitTransition(null);
         window.setReenterTransition(null);
 
-        window.setSharedElementEnterTransition(slide);
-        window.setSharedElementReturnTransition(slide);
-        window.setSharedElementExitTransition(slide);
-        window.setSharedElementReenterTransition(slide);
-
-//        window.setAllowEnterTransitionOverlap(false);
-//        window.setAllowReturnTransitionOverlap(false);
-
-    }
-
-    public static void setupSubLevelActivityTransitions(Window window) {
-
-        //window.requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
-
-        window.setEnterTransition(slideRightEdge);
-        window.setReturnTransition(slideRightEdge);
-        window.setExitTransition(slideLeftEdge);
-        window.setReenterTransition(slideLeftEdge);
-
-        window.setSharedElementEnterTransition(slide);
-        window.setSharedElementReturnTransition(slide);
-        window.setSharedElementExitTransition(slide);
-        window.setSharedElementReenterTransition(slide);
-
-//        window.setAllowEnterTransitionOverlap(false);
-//        window.setAllowReturnTransitionOverlap(false);
-
-    }
-
-    public static void setupNoActivityTransitions(Window window) {
-
-        //window.requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
-
-        window.setEnterTransition(null);
-        window.setReturnTransition(null);
-        window.setExitTransition(null);
-        window.setReenterTransition(null);
-
-        window.setSharedElementEnterTransition(null);
-        window.setSharedElementReturnTransition(null);
-        window.setSharedElementExitTransition(null);
-        window.setSharedElementReenterTransition(null);
+        window.setEnterTransition(slideTopEdge);
+        window.setReturnTransition(slideTopEdge);
+        window.setExitTransition(slideBottomEdge);
+        window.setReenterTransition(slideBottomEdge);
 
 //        window.setAllowEnterTransitionOverlap(false);
 //        window.setAllowReturnTransitionOverlap(false);
