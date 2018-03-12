@@ -25,6 +25,16 @@
             android:name="io.fabric.ApiKey"
             android:value="bdab41b77d82bdaab9a91ccc3baea11848da0201"/>
 
+        <meta-data
+            android:name="com.parse.SERVER_URL"
+            android:value="https://parseapi.back4app.com/" />
+        <meta-data
+            android:name="com.parse.APPLICATION_ID"
+            android:value="TQvF59bOz3IxfFaGtgDHgTjtqzgIgMorQiqrVwwy" />
+        <meta-data
+            android:name="com.parse.CLIENT_KEY"
+            android:value="3SCYFydPoGAbroWMLq9V3x7QyLZZ7D46GryIfiPd" />
+
     </application>
 
 </manifest>

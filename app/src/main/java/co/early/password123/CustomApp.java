@@ -3,6 +3,7 @@ package co.early.password123;
 import android.app.Application;
 
 import com.crashlytics.android.Crashlytics;
+import com.parse.Parse;
 
 import co.early.asaf.core.Affirm;
 import co.early.asaf.core.WorkMode;
@@ -21,6 +22,7 @@ public class CustomApp extends Application {
         super.onCreate();
 
         Fabric.with(this, new Crashlytics());
+        Parse.initialize(this);
 
         instance = this;
 
