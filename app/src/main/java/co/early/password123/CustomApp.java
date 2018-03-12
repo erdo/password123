@@ -2,8 +2,11 @@ package co.early.password123;
 
 import android.app.Application;
 
+import com.crashlytics.android.Crashlytics;
+
 import co.early.asaf.core.Affirm;
 import co.early.asaf.core.WorkMode;
+import io.fabric.sdk.android.Fabric;
 
 /**
  * Try not to fill this class with lots of code, if possible move it to a model somewhere
@@ -16,6 +19,8 @@ public class CustomApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        Fabric.with(this, new Crashlytics());
 
         instance = this;
 
