@@ -24,7 +24,6 @@ import co.early.password123.R;
 import co.early.password123.feature.networkmonitor.NetworkState;
 import co.early.password123.feature.passwordvisibility.PasswordVisibility;
 import co.early.password123.ui.about.AboutActivity;
-import co.early.password123.ui.common.TextWatcherCheckPassword;
 import co.early.password123.ui.common.ViewUtils;
 import co.early.password123.ui.common.widgets.LockedKeyboardEditText;
 import co.early.password123.ui.common.widgets.PercentBar;

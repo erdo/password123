@@ -1,4 +1,4 @@
-package co.early.password123.ui.common;
+package co.early.password123.ui.passwordchooser;
 
 import android.text.Editable;
 import android.text.TextWatcher;
