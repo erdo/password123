@@ -67,7 +67,7 @@ public class ResultFormatter {
         }
 
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("error HTTP-");
+        stringBuilder.append("HTTP-");
         stringBuilder.append(error.httpCode);
         stringBuilder.append(" ");
         if (error.message != null) {

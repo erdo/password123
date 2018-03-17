@@ -45,19 +45,35 @@ public class TransitionUtils {
     }
 
 
-    public static void setupActivityTransitions1(Window window) {
+    //these will only work if you start your activity using ActivityOptions.makeSceneTransitionAnimation
+    public static void setupActivityTransitions(Window window) {
 
-        //window.requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
+        window.requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
 
-        window.setEnterTransition(fade);
-        window.setReturnTransition(fade);
-        window.setExitTransition(null);
-        window.setReenterTransition(null);
+        // material design defaults for A -> B
+//        window.setExitTransition(null); // A Exits
+//        window.setEnterTransition(fade); // B Enters
+//        window.setReturnTransition(fade); // B Exits (Returns to A)
+//        window.setReenterTransition(null); // A Enters (Returns from B)
 
-        window.setEnterTransition(slideTopEdge);
-        window.setReturnTransition(slideTopEdge);
-        window.setExitTransition(slideBottomEdge);
-        window.setReenterTransition(slideBottomEdge);
+
+//        window.setExitTransition(null); // A Exits
+//        window.setEnterTransition(fade); // B Enters
+//        window.setReturnTransition(fade); // B Exits (Returns to A)
+//        window.setReenterTransition(null); // A Enters (Returns from B)
+
+
+//        window.setExitTransition(null);
+//        window.setEnterTransition(null);
+//        window.setReturnTransition(null);
+//        window.setReenterTransition(null);
+
+
+//        window.setExitTransition(slideBottomEdge);
+//        window.setEnterTransition(slideTopEdge);
+//        window.setReturnTransition(slideTopEdge);
+//        window.setReenterTransition(slideBottomEdge);
+
 
 //        window.setAllowEnterTransitionOverlap(false);
 //        window.setAllowReturnTransitionOverlap(false);

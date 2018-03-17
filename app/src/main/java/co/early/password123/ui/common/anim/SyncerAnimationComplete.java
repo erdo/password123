@@ -1,4 +1,4 @@
-package co.early.password123.ui.common;
+package co.early.password123.ui.common.anim;
 
 
 import android.animation.Animator;

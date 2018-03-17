@@ -1,0 +1,22 @@
+<animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+    android:id="@+id/visible"
+    android:drawable="@drawable/eye_visible_vd"
+    android:state_checked="true"/>
+
+  <item
+    android:id="@+id/masked"
+    android:drawable="@drawable/eye_masked_vd"/>
+
+  <transition
+    android:drawable="@drawable/eye_masked_to_visible_avd"
+    android:fromId="@id/masked"
+    android:toId="@id/visible"/>
+
+  <transition
+    android:drawable="@drawable/eye_visible_to_masked_avd"
+    android:fromId="@id/visible"
+    android:toId="@id/masked"/>
+
+</animated-selector>

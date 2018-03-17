@@ -7,9 +7,8 @@ import android.view.animation.Interpolator;
 
 public class CustomEasing {
 
-    //https://matthewlein.com/tools/ceaser
-
-    public static Interpolator flopUp = PathInterpolatorCompat.create(0.865f, -0.515f, 0.925f, 0.615f);
-    public static TimeInterpolator bounceDown = new CordicBounceOut();
+    public static final Interpolator flopUp = PathInterpolatorCompat.create(1.000f, -0.165f, 0.665f, 0.390f); //https://matthewlein.com/tools/ceaser
+    public static final Interpolator innieOutie = PathInterpolatorCompat.create(0.475f, 0.075f, 0.345f, 0.880f);
+    public static final TimeInterpolator bounceDown = new CordicBounceOut();
 
 }

@@ -5,6 +5,8 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.os.Handler;
 
+import com.crashlytics.android.answers.Answers;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,9 +14,11 @@ import co.early.asaf.core.WorkMode;
 import co.early.asaf.core.logging.AndroidLogger;
 import co.early.asaf.core.logging.Logger;
 import co.early.asaf.core.time.SystemTimeWrapper;
+import co.early.password123.feature.analytics.Analytics;
 import co.early.password123.feature.networkmonitor.ActivityLifecycleNetworkCheck;
 import co.early.password123.feature.networkmonitor.DoubleCheckConnection;
 import co.early.password123.feature.networkmonitor.NetworkState;
+import co.early.password123.feature.passwordvisibility.PasswordVisibility;
 import co.early.pwned.Pwned;
 import co.early.pwned.feature.PwnedResult;
 
@@ -51,12 +55,15 @@ class ObjectGraph {
                 doubleCheckConnection,
                 workMode);
         application.registerActivityLifecycleCallbacks(new ActivityLifecycleNetworkCheck(networkState));
-
+        Analytics analytics = new Analytics(BuildConfig.DEBUG ? null : Answers.getInstance(), logger);
+        PasswordVisibility passwordVisibility = new PasswordVisibility(workMode);
 
         // add models to the dependencies map if you will need them later
         dependencies.put(Pwned.class, pwned);
         dependencies.put(SystemTimeWrapper.class, systemTimeWrapper);
         dependencies.put(NetworkState.class, networkState);
+        dependencies.put(Analytics.class, analytics);
+        dependencies.put(PasswordVisibility.class, passwordVisibility);
         dependencies.put(Logger.class, logger);
 
     }

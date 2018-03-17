@@ -14,13 +14,18 @@ import butterknife.ButterKnife;
 import co.early.asaf.core.logging.Logger;
 import co.early.password123.CustomApp;
 import co.early.password123.R;
-import co.early.password123.ui.passwordchooser.PwChooserAnimations;
+import co.early.password123.feature.analytics.Analytics;
+import co.early.password123.ui.common.widgets.CardLineImage;
+import co.early.password123.ui.common.widgets.CardLineText;
+
+import static co.early.password123.feature.analytics.AnalyticsConstants.Events.InfoScreen.SEARCH_FOR_PASSWORD_MGR;
 
 
 public class AboutView extends ScrollView{
 
     //models that we need to sync with
     private Logger logger;
+    private Analytics analytics;
 
 
     @BindView(R.id.about_info_img)
@@ -61,13 +66,6 @@ public class AboutView extends ScrollView{
 
 
 
-
-
-    private PwChooserAnimations animations;
-
-
-
-
     public AboutView(Context context) {
         super(context);
     }
@@ -92,13 +90,12 @@ public class AboutView extends ScrollView{
 
         setupContent();
 
-        setupAnimationTriggers();
-
         setListeners();
     }
 
     private void getModelReferences(){
         logger = CustomApp.get(Logger.class);
+        analytics = CustomApp.get(Analytics.class);
     }
 
     private void setupContent(){
@@ -131,18 +128,12 @@ public class AboutView extends ScrollView{
     }
 
 
-    private void setupAnimationTriggers(){
-
-//        animations = new PwChooserAnimations(networkIcon, backgroundWarn, infoIcon, busy, initProgress,
-//                this, networkState, pwned);
-    }
-
     private void setListeners(){
         cardPasswordManager.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                //https://duckduckgo.com/?q=password+managers
                 getContext().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://duckduckgo.com/?q=password+managers")));
+                analytics.logEventRemotelyOrLocally(SEARCH_FOR_PASSWORD_MGR);
             }
         });
     }

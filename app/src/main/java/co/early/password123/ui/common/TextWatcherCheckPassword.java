@@ -2,7 +2,6 @@ package co.early.password123.ui.common;
 
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.widget.EditText;
 
 import co.early.asaf.core.Affirm;
 import co.early.pwned.Pwned;
@@ -12,10 +11,8 @@ import co.early.pwned.Pwned;
 public class TextWatcherCheckPassword implements TextWatcher {
 
     private final Pwned pwned;
-    private final EditText editText;
 
-    public TextWatcherCheckPassword(EditText editText, Pwned pwned) {
-        this.editText = Affirm.notNull(editText);
+    public TextWatcherCheckPassword(Pwned pwned) {
         this.pwned = Affirm.notNull(pwned);
     }
 
@@ -31,7 +28,8 @@ public class TextWatcherCheckPassword implements TextWatcher {
 
     @Override
     public void afterTextChanged(Editable s) {
-        pwned.setPasswordToCheck(editText.getText().toString());
+        pwned.setPasswordToCheck(s.toString());
     }
 
 }
+

@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.util.Log;
+import android.os.Handler;
 
 import co.early.asaf.core.Affirm;
 import co.early.asaf.core.WorkMode;
@@ -35,10 +35,12 @@ public class NetworkState extends ObservableImp {
         }
     }
 
-    private ConnectivityManager connectivityManager;
-    private Application application;
-    private WorkMode workMode;
-    private DoubleCheckConnection doubleCheckConnection;
+    private final ConnectivityManager connectivityManager;
+    private final Application application;
+    private final WorkMode workMode;
+    private final DoubleCheckConnection doubleCheckConnection;
+
+    private final Handler handler;
 
 
 
@@ -60,6 +62,8 @@ public class NetworkState extends ObservableImp {
         this.application = Affirm.notNull(application);
         this.workMode = Affirm.notNull(workMode);
         this.doubleCheckConnection = Affirm.notNull(doubleCheckConnection);
+
+        handler = new Handler();
     }
 
     private void checkConnection() {
@@ -82,8 +86,6 @@ public class NetworkState extends ObservableImp {
             newConnectionType = ConnectionType.OTHER;// might actually be connected via Ethernet or even via MMS
         }
 
-        Log.e(TAG, "newConnectionType:" + newConnectionType);
-
         if (newConnectionType.needsVerification) {
             doubleCheckConnectionAsync(newConnectionType);
         }else{
@@ -103,7 +105,14 @@ public class NetworkState extends ObservableImp {
     private void setNewConnectionTypeAndNotifyIfReq(ConnectionType newConnectionType) {
         if (newConnectionType != connectionType) {
             connectionType = newConnectionType;
-            notifyObservers();
+
+            if (connectionType == ConnectionType.NONE && workMode == WorkMode.ASYNCHRONOUS){
+                handler.removeCallbacksAndMessages(null);
+                handler.postDelayed(() -> notifyObservers(), 2000);
+            } else {
+                notifyObservers();
+            }
+
         }
     }
 

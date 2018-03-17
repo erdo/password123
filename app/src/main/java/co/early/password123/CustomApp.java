@@ -3,6 +3,7 @@ package co.early.password123;
 import android.app.Application;
 
 import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.answers.Answers;
 import com.parse.Parse;
 
 import co.early.asaf.core.Affirm;
@@ -21,8 +22,12 @@ public class CustomApp extends Application {
     public void onCreate() {
         super.onCreate();
 
-        Fabric.with(this, new Crashlytics());
+        //third party library setup
+        if (!BuildConfig.DEBUG) {
+            Fabric.with(this, new Crashlytics(), new Answers());
+        }
         Parse.initialize(this);
+
 
         instance = this;
 
@@ -36,7 +41,6 @@ public class CustomApp extends Application {
     public static CustomApp getInst() {
         return instance;
     }
-
 
     public void injectSynchronousObjectGraph() {
         objectGraph = new ObjectGraph();

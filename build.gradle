@@ -18,6 +18,17 @@ buildscript {
     }
 }
 
+
+def secrets = new Properties()
+def secretsFile = new File('secrets.properties')
+if (secretsFile.canRead()) {
+    secrets.load(new FileInputStream(secretsFile))
+} else {
+    println 'WARNING secrets.properties not found! release builds will fail\n'
+}
+
+
+
 allprojects {
     repositories {
         google()
@@ -28,6 +39,26 @@ allprojects {
         }
     }
 }
+
+
+
+ext {
+
+    minSdkVersion = 21
+    compileSdkVersion = 26
+    targetSdkVersion = 26
+    buildToolsVersion = "26.0.2"
+    supportLibVersion = "26.0.2"
+
+    APP_VERSION_NAME="0.9.10"
+    APP_VERSION_CODE=10
+
+    KEYSTORE_PATH = System.getenv("KEYSTORE_PATH") ?: secrets.KEYSTORE_PATH
+    KEYSTORE_ALIAS = System.getenv("KEYSTORE_ALIAS") ?: secrets.KEYSTORE_ALIAS
+    KEYSTORE_PASSWORD = System.getenv("KEYSTORE_PASSWORD") ?: secrets.KEYSTORE_PASSWORD
+
+}
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir

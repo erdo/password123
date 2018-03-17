@@ -17,15 +17,15 @@
             android:id="@+id/about_info_img"
             android:layout_width="@dimen/about_icon_size"
             android:layout_height="@dimen/about_icon_size"
-            android:padding="@dimen/common_space_medium"
+            android:padding="@dimen/cmn_space_medium"
             android:src="@drawable/info_outline_black"
             android:tint="@color/colorAccent" />
 
         <android.support.v7.widget.CardView
             android:id="@+id/about_key_card"
             style="@style/CustomCardLayout"
-            card_view:cardCornerRadius="@dimen/common_space_medium"
-            card_view:cardElevation="@dimen/common_space_tiny">
+            card_view:cardCornerRadius="@dimen/cmn_space_medium"
+            card_view:cardElevation="@dimen/cmn_space_tiny">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,8 +37,8 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:textStyle="bold"
-                    android:padding="@dimen/common_space_medium"
-                    android:textSize="@dimen/common_textsize_large"
+                    android:padding="@dimen/cmn_space_medium"
+                    android:textSize="@dimen/cmn_textsize_large"
                     android:text="@string/help"/>
 
                 <include
@@ -66,8 +66,8 @@
             android:id="@+id/about_pmanager_card"
             style="@style/CustomCardLayout"
             android:clickable="true"
-            card_view:cardCornerRadius="@dimen/common_space_medium"
-            card_view:cardElevation="@dimen/common_space_tiny">
+            card_view:cardCornerRadius="@dimen/cmn_space_medium"
+            card_view:cardElevation="@dimen/cmn_space_tiny">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -87,8 +87,8 @@
             android:id="@+id/about_tech_card"
             style="@style/CustomCardLayout"
             android:clickable="true"
-            card_view:cardCornerRadius="@dimen/common_space_small"
-            card_view:cardElevation="@dimen/common_space_tiny">
+            card_view:cardCornerRadius="@dimen/cmn_space_small"
+            card_view:cardElevation="@dimen/cmn_space_tiny">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -100,9 +100,9 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:textStyle="bold"
-                    android:padding="@dimen/common_space_medium"
-                    android:textSize="@dimen/common_textsize_large"
-                    android:text="How does Password123 work"/>
+                    android:padding="@dimen/cmn_space_medium"
+                    android:textSize="@dimen/cmn_textsize_large"
+                    android:text="@string/how_does_password123_work"/>
 
                 <include
                     android:id="@+id/about_tech_cardlineimg"
@@ -115,8 +115,8 @@
         <android.support.v7.widget.CardView
             android:id="@+id/about_licence_card"
             style="@style/CustomCardLayout"
-            card_view:cardCornerRadius="@dimen/common_space_small"
-            card_view:cardElevation="@dimen/common_space_tiny">
+            card_view:cardCornerRadius="@dimen/cmn_space_small"
+            card_view:cardElevation="@dimen/cmn_space_tiny">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -128,9 +128,9 @@
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
                     android:textStyle="bold"
-                    android:padding="@dimen/common_space_medium"
-                    android:textSize="@dimen/common_textsize_large"
-                    android:text="Credits"/>
+                    android:padding="@dimen/cmn_space_medium"
+                    android:textSize="@dimen/cmn_textsize_large"
+                    android:text="@string/credits"/>
 
                 <include
                     android:id="@+id/about_licence_cardlineimg"

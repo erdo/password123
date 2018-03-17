@@ -1,13 +1,10 @@
 package co.early.password123.ui.common.anim;
 
-import android.animation.TimeInterpolator;
-
-
-public class CordicBounceOut implements TimeInterpolator{
+public class CordicBounceOut extends Cordic{
 
     @Override
-    public float getInterpolation(float input) {
-        return 1f - (float) bounceOutTable[(int) (input * 1000)]/1000;
+    int[] getNormalised1000CordicTable() {
+        return bounceOutTable;
     }
 
     // table data normalized to 1000
