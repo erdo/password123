@@ -187,7 +187,7 @@ public class PwChooserView extends ScrollView implements SyncableView {
 
         final int[] stateSet = {android.R.attr.state_checked * (passwordVisibility.isVisible() ? 1 : -1)};
         eyeView.setImageState(stateSet, true);
-        eyeView.setEnabled(pwned.offlineDataLoadingComplete());
+        eyeView.setEnabled(pwned.offlineDataLoadingComplete() && password.getText().length()>0);
         password.setEnabled(pwned.offlineDataLoadingComplete());
         password.setInputType(passwordVisibility.isVisible() ?
                 InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD :
