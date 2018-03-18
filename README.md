@@ -1,7 +1,7 @@
 # Password123
 [playstore listing](https://play.google.com/store/apps/details?id=co.early.password123) \| [source code](https://github.com/erdo/password123)
 
-![image](https://raw.githubusercontent.com/erdo/password123/master/screenshot_phone_landscape.png)
+![image](https://raw.githubusercontent.com/erdo/password123/master/screenshot_phone_portrait.png)
 
 Simple android Kotlin app to check passwords. It's built using the [ASAF](https://erdo.github.io/asaf-project/) framework. There is a Kotlin version (in master) and a Java version in the java branch.
 
@@ -49,9 +49,13 @@ http://cloc.sourceforge.net v 1.62  T=0.59 s (79.4 files/s, 6306.2 lines/s)
 
 ## License for data
 
-    The password data that enables this app is provided (and paid for) by "Have I been pwned" (haveibeenpwned.com). Access to that data comes with its own licencing terms.
+    The password data that enables this app is provided (and paid for) by "Have I been pwned"
+    (haveibeenpwned.com). Access to that data comes with its own licencing terms.
 
-	If you intend to modify this application in any way, please check [haveibeenpwned.com](https://haveibeenpwned.com/API/v2#License) first to ensure the license supports what you want to do. At the time of writing, the licencing terms were Creative Commons Attribution 4.0 International, but don't take my word for it.
+	If you intend to modify this application in any way, please check [haveibeenpwned.com](https://haveibeenpwned.com/API/v2#License) first
+	to ensure the license supports what you want to do. At the time of writing, the licencing
+	terms were Creative Commons Attribution 4.0 International, but
+	don't take my word for it.
 
 ## License for application
 
