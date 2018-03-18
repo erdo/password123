@@ -18,8 +18,6 @@ public class DoubleCheckConnection {
 
         OkHttpClient client = new OkHttpClient().newBuilder()
                 .addInterceptor(new InterceptorLogging(new AndroidLogger())).build();
-        //TODO check this with more cafe wifis like pret and starbucks
-        //.followRedirects(false).followSslRedirects(false).build();
 
         Request request = new Request.Builder().url("https://google.com").head().build();
         Response response = null;

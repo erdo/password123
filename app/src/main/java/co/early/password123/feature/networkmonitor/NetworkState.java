@@ -11,6 +11,7 @@ import android.os.Handler;
 
 import co.early.asaf.core.Affirm;
 import co.early.asaf.core.WorkMode;
+import co.early.asaf.core.logging.Logger;
 import co.early.asaf.core.observer.ObservableImp;
 import co.early.asaf.core.threading.AsafTaskBuilder;
 
@@ -37,6 +38,7 @@ public class NetworkState extends ObservableImp {
 
     private final ConnectivityManager connectivityManager;
     private final Application application;
+    private final Logger logger;
     private final WorkMode workMode;
     private final DoubleCheckConnection doubleCheckConnection;
 
@@ -56,10 +58,11 @@ public class NetworkState extends ObservableImp {
 
 
 
-    public NetworkState(ConnectivityManager connectivityManager, Application application, DoubleCheckConnection doubleCheckConnection, WorkMode workMode) {
+    public NetworkState(ConnectivityManager connectivityManager, Application application, Logger logger, DoubleCheckConnection doubleCheckConnection, WorkMode workMode) {
         super(workMode);
         this.connectivityManager = Affirm.notNull(connectivityManager);
         this.application = Affirm.notNull(application);
+        this.logger = Affirm.notNull(logger);
         this.workMode = Affirm.notNull(workMode);
         this.doubleCheckConnection = Affirm.notNull(doubleCheckConnection);
 
@@ -105,6 +108,8 @@ public class NetworkState extends ObservableImp {
     private void setNewConnectionTypeAndNotifyIfReq(ConnectionType newConnectionType) {
         if (newConnectionType != connectionType) {
             connectionType = newConnectionType;
+
+            logger.i(TAG, "new network state:" + connectionType);
 
             if (connectionType == ConnectionType.NONE && workMode == WorkMode.ASYNCHRONOUS){
                 handler.removeCallbacksAndMessages(null);

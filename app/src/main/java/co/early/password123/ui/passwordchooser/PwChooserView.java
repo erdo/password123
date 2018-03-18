@@ -176,7 +176,6 @@ public class PwChooserView extends ScrollView implements SyncableView {
         });
     }
 
-
     //data binding stuff below
 
     public void syncView() {
