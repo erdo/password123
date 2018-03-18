@@ -47,7 +47,7 @@ class ObjectGraph {
         // create dependency graph
         Pwned pwned = new Pwned(application);
         SystemTimeWrapper systemTimeWrapper = new SystemTimeWrapper();
-        Logger logger = new AndroidLogger();
+        Logger logger = new AndroidLogger("P123_");
         DoubleCheckConnection doubleCheckConnection = new DoubleCheckConnection();
         NetworkState networkState = new NetworkState(
                 (ConnectivityManager) application.getSystemService(Context.CONNECTIVITY_SERVICE),
