@@ -21,6 +21,8 @@ import co.early.password123.feature.networkmonitor.NetworkState;
 import co.early.password123.feature.passwordvisibility.PasswordVisibility;
 import co.early.pwned.Pwned;
 import co.early.pwned.feature.PwnedResult;
+import co.early.pwned.feature.PwnedRouter;
+import co.early.pwned.feature.offline.OfflinePwdDb;
 
 import static co.early.asaf.core.Affirm.notNull;
 import static co.early.pwned.feature.PwnedResult.IsPwned.UNKNOWN;
@@ -45,9 +47,10 @@ class ObjectGraph {
 
 
         // create dependency graph
-        Pwned pwned = new Pwned(application);
-        SystemTimeWrapper systemTimeWrapper = new SystemTimeWrapper();
         Logger logger = new AndroidLogger("P123_");
+        //Pwned pwned = new Pwned(application);
+        Pwned pwned = new Pwned(application, OfflinePwdDb.SIZE_10000, PwnedRouter.OnlineMethod.K_ANON, WorkMode.ASYNCHRONOUS, logger);
+        SystemTimeWrapper systemTimeWrapper = new SystemTimeWrapper();
         DoubleCheckConnection doubleCheckConnection = new DoubleCheckConnection();
         NetworkState networkState = new NetworkState(
                 (ConnectivityManager) application.getSystemService(Context.CONNECTIVITY_SERVICE),
