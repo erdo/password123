@@ -131,7 +131,6 @@ public class NetworkState extends ObservableImp {
 
     public void enable() {
         application.registerReceiver(networkStateChangeBroadcastReceiver, new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION));
-        checkConnection();
     }
 
     public void disable() {
