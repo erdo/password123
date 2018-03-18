@@ -52,8 +52,9 @@ http://cloc.sourceforge.net v 1.62  T=0.59 s (79.4 files/s, 6306.2 lines/s)
     The password data that enables this app is provided (and paid for) by "Have I been pwned"
     (haveibeenpwned.com). Access to that data comes with its own licencing terms.
 
-	If you intend to modify this application in any way, please check [haveibeenpwned.com](https://haveibeenpwned.com/API/v2#License) first
-	to ensure the license supports what you want to do. At the time of writing, the licencing
+	If you intend to modify this application in any way, please check
+	https://haveibeenpwned.com/API/v2#License first to ensure the license supports what
+	you want to do. At the time of writing, the licencing
 	terms were Creative Commons Attribution 4.0 International, but
 	don't take my word for it.
 
