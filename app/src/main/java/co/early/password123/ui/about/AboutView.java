@@ -3,9 +3,9 @@ package co.early.password123.ui.about;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.ScrollView;
 
@@ -100,19 +100,19 @@ public class AboutView extends ScrollView{
 
     private void setupContent(){
 
-        tooShortLine.getTextIconView().setTextColor(CustomApp.getInst().getResources().getColor(R.color.colorPW123Severity3));
+        tooShortLine.getTextIconView().setTextColor(ContextCompat.getColor(getContext(), R.color.colorPW123Severity3));
         tooShortLine.getTextIconView().setText(R.string.pwned_state_tooshort);
         tooShortLine.getTextView().setText(R.string.pwned_detail_tooshort);
 
-        pwnedLine.getTextIconView().setTextColor(CustomApp.getInst().getResources().getColor(R.color.colorPW123Severity3));
+        pwnedLine.getTextIconView().setTextColor(ContextCompat.getColor(getContext(), R.color.colorPW123Severity3));
         pwnedLine.getTextIconView().setText(R.string.pwned_state_pwned);
         pwnedLine.getTextView().setText(R.string.pwned_detail_pwned);
 
-        unknownLine.getTextIconView().setTextColor(CustomApp.getInst().getResources().getColor(R.color.colorAccent));
+        unknownLine.getTextIconView().setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccent));
         unknownLine.getTextIconView().setText(R.string.pwned_state_unknown);
         unknownLine.getTextView().setText(R.string.pwned_detail_unknown);
 
-        okLine.getTextIconView().setTextColor(CustomApp.getInst().getResources().getColor(R.color.colorPW123Severity0));
+        okLine.getTextIconView().setTextColor(ContextCompat.getColor(getContext(), R.color.colorPW123Severity0));
         okLine.getTextIconView().setText(R.string.pwned_state_ok);
         okLine.getTextView().setText(R.string.pwned_detail_ok);
 
@@ -129,12 +129,9 @@ public class AboutView extends ScrollView{
 
 
     private void setListeners(){
-        cardPasswordManager.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getContext().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://duckduckgo.com/?q=password+managers")));
-                analytics.logEventRemotelyOrLocally(SEARCH_FOR_PASSWORD_MGR);
-            }
+        cardPasswordManager.setOnClickListener(v -> {
+            getContext().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://duckduckgo.com/?q=password+managers")));
+            analytics.logEventRemotelyOrLocally(SEARCH_FOR_PASSWORD_MGR);
         });
     }
 

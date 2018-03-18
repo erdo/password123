@@ -139,40 +139,22 @@ public class PwChooserView extends ScrollView implements SyncableView {
 
     private void setClickListeners() {
 
-        eyeView.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                passwordVisibility.toggleVisibility();
-            }
-        });
+        eyeView.setOnClickListener(v -> passwordVisibility.toggleVisibility());
         password.addTextChangedListener(new TextWatcherCheckPassword(pwned));
-        cloudIcon.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getContext(), R.string.network_warning, Toast.LENGTH_SHORT).show();
-            }
-        });
-        poweredBy.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getContext().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://haveibeenpwned.com/")));
-            }
-        });
-        infoIcon.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //(ViewGroup)PwChooserView.this.getParent() because we are a scrollview, the animation measurements
-                //need a non scroll view parent to work robustly
-                animations.infoIconClicked((ViewGroup)PwChooserView.this.getParent(), infoIcon, busy, password, eyeView,
-                        warningText, warningDetail, cloudIcon, transitionBackground, new SuccessCallBack() {
-                    @Override
-                    public void success() {
-                        if (ViewUtils.getActivity(getContext()).hasWindowFocus()){
-                            AboutActivity.start(getContext());
-                        }
+        cloudIcon.setOnClickListener(v -> Toast.makeText(getContext(), R.string.network_warning, Toast.LENGTH_SHORT).show());
+        poweredBy.setOnClickListener(v -> getContext().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://haveibeenpwned.com/"))));
+        infoIcon.setOnClickListener(v -> {
+            //(ViewGroup)PwChooserView.this.getParent() because we are a scrollview, the animation measurements
+            //need a non scroll view parent to work robustly
+            animations.infoIconClicked((ViewGroup)PwChooserView.this.getParent(), infoIcon, busy, password, eyeView,
+                    warningText, warningDetail, cloudIcon, transitionBackground, new SuccessCallBack() {
+                @Override
+                public void success() {
+                    if (ViewUtils.getActivity(getContext()).hasWindowFocus()){
+                        AboutActivity.start(getContext());
                     }
-                });
-            }
+                }
+            });
         });
     }
 

@@ -1,6 +1,7 @@
 package co.early.password123.ui.passwordchooser;
 
 import android.content.res.Resources;
+import android.support.v4.content.ContextCompat;
 
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -33,7 +34,7 @@ public class ResultFormatter {
             colourRes = R.color.colorPW123Severity3;
         }
 
-        return CustomApp.getInst().getResources().getColor(colourRes);
+        return ContextCompat.getColor(CustomApp.getInst(), colourRes);
     }
 
     public static String formatWarningMessage(PwnedResult pwnedResult){
