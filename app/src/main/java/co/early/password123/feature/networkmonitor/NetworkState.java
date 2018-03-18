@@ -109,7 +109,7 @@ public class NetworkState extends ObservableImp {
         if (newConnectionType != connectionType) {
             connectionType = newConnectionType;
 
-            logger.i(TAG, "new network state:" + connectionType);
+            logger.i(TAG, "Network state changed to:" + connectionType);
 
             if (connectionType == ConnectionType.NONE && workMode == WorkMode.ASYNCHRONOUS){
                 handler.removeCallbacksAndMessages(null);
