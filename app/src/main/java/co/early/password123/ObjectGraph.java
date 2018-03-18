@@ -53,6 +53,7 @@ class ObjectGraph {
                 (ConnectivityManager) application.getSystemService(Context.CONNECTIVITY_SERVICE),
                 application,
                 doubleCheckConnection,
+                logger,
                 workMode);
         application.registerActivityLifecycleCallbacks(new ActivityLifecycleNetworkCheck(networkState));
         Analytics analytics = new Analytics(BuildConfig.DEBUG ? null : Answers.getInstance(), logger);

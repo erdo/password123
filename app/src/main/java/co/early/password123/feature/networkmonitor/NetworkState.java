@@ -58,13 +58,13 @@ public class NetworkState extends ObservableImp {
 
 
 
-    public NetworkState(ConnectivityManager connectivityManager, Application application, Logger logger, DoubleCheckConnection doubleCheckConnection, WorkMode workMode) {
+    public NetworkState(ConnectivityManager connectivityManager, Application application, DoubleCheckConnection doubleCheckConnection, Logger logger, WorkMode workMode) {
         super(workMode);
         this.connectivityManager = Affirm.notNull(connectivityManager);
         this.application = Affirm.notNull(application);
+        this.doubleCheckConnection = Affirm.notNull(doubleCheckConnection);
         this.logger = Affirm.notNull(logger);
         this.workMode = Affirm.notNull(workMode);
-        this.doubleCheckConnection = Affirm.notNull(doubleCheckConnection);
 
         handler = new Handler();
     }
