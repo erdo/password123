@@ -11,8 +11,8 @@ import co.early.asaf.core.logging.Logger;
 
 public class Analytics {
 
-    private static final String TAG_ONLINE = "Antics:ONLINE";
-    private static final String TAG_OFFLINE = "Antics:OFFLINE";
+    private static final String TAG_ONLINE = "Analytics:ON";
+    private static final String TAG_OFFLINE = "Analytics:OFF";
 
     @Nullable
     private final Answers answers;
@@ -24,15 +24,15 @@ public class Analytics {
     }
 
 
-    public void logEventRemotelyOrLocally(String evetName){
+    public void logEventRemotelyOrLocally(String eventName){
 
-        Affirm.notNull(evetName);
+        Affirm.notNull(eventName);
 
         if (answers != null){
-            answers.logCustom(new CustomEvent(evetName));
-            logger.i(TAG_ONLINE, evetName);
+            answers.logCustom(new CustomEvent(eventName));
+            logger.i(TAG_ONLINE, eventName);
         }else{
-            logger.i(TAG_OFFLINE, evetName);
+            logger.i(TAG_OFFLINE, eventName);
         }
     }
 

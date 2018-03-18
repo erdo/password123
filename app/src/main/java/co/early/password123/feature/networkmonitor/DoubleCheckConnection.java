@@ -3,6 +3,7 @@ package co.early.password123.feature.networkmonitor;
 import java.io.IOException;
 
 import co.early.asaf.core.logging.AndroidLogger;
+import co.early.asaf.core.logging.Logger;
 import co.early.asaf.retrofit.InterceptorLogging;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -15,9 +16,13 @@ public class DoubleCheckConnection {
 
 
     public boolean canWeConnect() {
+        return canWeConnect(new AndroidLogger());
+    }
+
+    public boolean canWeConnect(Logger logger) {
 
         OkHttpClient client = new OkHttpClient().newBuilder()
-                .addInterceptor(new InterceptorLogging(new AndroidLogger())).build();
+                .addInterceptor(new InterceptorLogging(logger)).build();
 
         Request request = new Request.Builder().url("https://google.com").head().build();
         Response response = null;

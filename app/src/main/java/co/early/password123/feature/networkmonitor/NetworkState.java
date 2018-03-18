@@ -99,7 +99,7 @@ public class NetworkState extends ObservableImp {
 
     private void doubleCheckConnectionAsync(ConnectionType newConnectionType) {
         new AsafTaskBuilder<ConnectionType, ConnectionType>(workMode)
-                .doInBackground(connectionType -> doubleCheckConnection.canWeConnect() ?
+                .doInBackground(connectionType -> doubleCheckConnection.canWeConnect(logger) ?
                                             connectionType[0] : ConnectionType.LOGIN_OR_CREDIT_REQUIRED)
                 .onPostExecute(payload -> setNewConnectionTypeAndNotifyIfReq(payload))
                 .execute(newConnectionType);
