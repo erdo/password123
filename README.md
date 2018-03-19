@@ -7,6 +7,8 @@ Simple android Kotlin app to check passwords. It's built using the [ASAF](https:
 
 This app is basically an example of how to use the [pwned4android](https://github.com/erdo/pwned4android) library. The pwned4android library wraps the "Have I been pwned" password checker service so that you can easily use it inside an android app, please see that repo for a fuller description of how it works.
 
+*If you want to clone and build this app yourself, you'll need at least AS3 and you might find it easier to delete the entire signingConfigs{} block from build.gradle and the signingConfig line that refers to it in the buildTypes{} block just below that - These are things that I need to sign the app for publishing, but unless you reference your own keystore they will just prevent the app from building*
+
 ### Credits
 
 The app makes use of these third party libraries and services:
