@@ -46,8 +46,8 @@ ext {
     buildToolsVersion = "26.0.2"
     supportLibVersion = "26.0.2"
 
-    APP_VERSION_NAME="1.0.0"
-    APP_VERSION_CODE=1
+    APP_VERSION_NAME="1.0.1"
+    APP_VERSION_CODE=2
 
     KEYSTORE_PATH = System.getenv("KEYSTORE_PATH") ?: secrets.KEYSTORE_PATH
     KEYSTORE_ALIAS = System.getenv("KEYSTORE_ALIAS") ?: secrets.KEYSTORE_ALIAS
