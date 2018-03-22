@@ -3,7 +3,6 @@ package co.early.password123;
 import android.app.Application;
 import android.content.Context;
 import android.net.ConnectivityManager;
-import android.os.Handler;
 
 import com.crashlytics.android.answers.Answers;
 
@@ -82,9 +81,11 @@ class ObjectGraph {
             NetworkState networkState = get(NetworkState.class);
             Logger logger = get(Logger.class);
 
-            //load offline pwd db - delayed because we want the keyboard to finish popping up first
-            new Handler().postDelayed(() -> pwned.loadPwdDb(() -> logger.i(TAG, "Offline pwd db loaded"),
-                    failureMessage -> logger.e(TAG, "failed to load pwd db:" + failureMessage)), 1500);
+            //load offline pwd db
+            pwned.loadPwdDb(
+                    () -> logger.i(TAG, "Offline pwd db loaded"),
+                    failureMessage -> logger.e(TAG, "failed to load pwd db:" + failureMessage)
+            );
 
             // enable network monitor
             networkState.enable();
