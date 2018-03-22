@@ -3,7 +3,6 @@ package co.early.password123
 import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
-import android.os.Handler
 import co.early.asaf.core.Affirm.notNull
 import co.early.asaf.core.WorkMode
 import co.early.asaf.core.logging.AndroidLogger
@@ -72,10 +71,10 @@ internal class ObjectGraph {
             val logger = get(Logger::class.java)
 
             //load offline pwd db - delayed because we want the keyboard to finish popping up first
-            Handler().postDelayed({
-                pwned.loadPwdDb({ logger.i(TAG, "Offline pwd db loaded") }
-                ) { failureMessage -> logger.e(TAG, "failed to load pwd db:" + failureMessage) }
-            }, 1500)
+            pwned.loadPwdDb(
+                    { logger.i(TAG, "Offline pwd db loaded") },
+                    { failureMessage -> logger.e(TAG, "failed to load pwd db:" + failureMessage) }
+            );
 
             // enable network monitor
             networkState.enable()

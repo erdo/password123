@@ -55,7 +55,7 @@ dependencies {
     compile (group: 'co.early.asaf', name: 'asaf-ui', version: "0.9.26", ext: 'aar')
     compile (group: 'co.early.asaf', name: 'asaf-retrofit', version: "0.9.26", ext: 'aar')
 
-    compile (group: 'co.early.pwned', name: 'pwned', version: "0.9.10", ext: 'aar'){
+    compile (group: 'co.early.pwned', name: 'pwned', version: "0.9.11", ext: 'aar'){
         transitive = true
     }
 
