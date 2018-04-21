@@ -173,7 +173,6 @@ public class PwChooserView extends ScrollView implements SyncableView {
         password.setInputType(passwordVisibility.isVisible() ?
                 InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD :
                 InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-        password.setSelection(password.getText().length());
         warningContainer.setVisibility(pwnedResult.pwnedState == UNKNOWN ? INVISIBLE : VISIBLE);
         warningText.setTextColor(ResultFormatter.getResovledColourForSeverity(pwnedResult));
         warningText.setText(formatWarningMessage(pwnedResult));
