@@ -129,7 +129,6 @@ class PwChooserView : ScrollView, SyncableView {
             InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
         else
             InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-        pwchoose_password_edittext.setSelection(pwchoose_password_edittext.text.length)
         pwchoose_warning_container.visibility = if (pwnedResult.pwnedState == UNKNOWN) View.INVISIBLE else View.VISIBLE
         pwchoose_warning_textview.setTextColor(ResultFormatter.getResovledColourForSeverity(pwnedResult))
         pwchoose_warning_textview.text = formatWarningMessage(pwnedResult)
