@@ -288,7 +288,7 @@ class PwChooserAnimations(netWarnIcon: View,
             warningText: View,
             warningDetail: View,
             cloudIcon: View,
-            transitionBackground: View,
+            aboutBackground: View,
             successCallBack: SuccessCallBack) {
 
         //current location of infoIcon
@@ -334,7 +334,7 @@ class PwChooserAnimations(netWarnIcon: View,
         infoAnimator3.startDelay = 250
         val infoAnimator4 = ObjectAnimator.ofFloat(infoIcon, "scaleY", 1f, 0.7f, 0.7f, 1.1f)
         infoAnimator4.startDelay = 250
-        val backgroundAnimator = ObjectAnimator.ofFloat(transitionBackground, "alpha", 0f, 1f)
+        val backgroundAnimator = ObjectAnimator.ofFloat(aboutBackground, "alpha", 0f, 1f)
         backgroundAnimator.setStartDelay(250)
 
 
@@ -371,7 +371,7 @@ class PwChooserAnimations(netWarnIcon: View,
                     busySpinner.translationX = 0f
                     warningText.translationX = 0f
                     warningDetail.translationX = 0f
-                    transitionBackground.alpha = 0f
+                    aboutBackground.alpha = 0f
 
                 }, 1000)//need to allow time for the about activity to start
 
