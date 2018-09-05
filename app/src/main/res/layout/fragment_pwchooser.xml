@@ -13,13 +13,13 @@
         android:layout_height="match_parent">
 
         <FrameLayout
-            android:id="@+id/pwchoose_warningbackground_view"
+            android:id="@+id/warningBackground"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorAccentFaded" />
 
         <FrameLayout
-            android:id="@+id/pwchoose_transitionbackground_view"
+            android:id="@+id/aboutBackground"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0"
@@ -45,21 +45,21 @@
             android:layout_centerInParent="true">
 
             <ImageView
-                android:id="@+id/pwchoose_cloud_img"
+                android:id="@+id/cloudImg"
                 android:layout_width="@dimen/icon_size"
                 android:layout_height="@dimen/icon_size"
-                android:layout_alignEnd="@id/pwchoose_password_edittext"
+                android:layout_alignEnd="@id/passwordEditText"
                 android:padding="@dimen/cmn_space_small"
                 android:layout_alignParentTop="true"
                 android:src="@drawable/network_gone_black"
                 android:tint="@color/colorAccent" />
 
             <co.early.password123.ui.common.widgets.LockedKeyboardEditText
-                android:id="@+id/pwchoose_password_edittext"
+                android:id="@+id/passwordEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/pwchoose_cloud_img"
+                android:layout_below="@+id/cloudImg"
                 android:layout_marginEnd="@dimen/cmn_space_medium_large"
                 android:layout_marginStart="@dimen/cmn_space_medium_large"
                 android:background="@drawable/edit_password_background"
@@ -77,12 +77,12 @@
                 android:textSize="@dimen/cmn_textsize_medium" />
 
             <ImageView
-                android:id="@+id/pwchoose_eye_img"
+                android:id="@+id/eyeImg"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_alignTop="@id/pwchoose_password_edittext"
-                android:layout_alignBottom="@id/pwchoose_password_edittext"
-                android:layout_alignEnd="@id/pwchoose_password_edittext"
+                android:layout_alignTop="@id/passwordEditText"
+                android:layout_alignBottom="@id/passwordEditText"
+                android:layout_alignEnd="@id/passwordEditText"
                 android:contentDescription="@null"
                 android:paddingTop="@dimen/cmn_space_tiny"
                 android:paddingStart="@dimen/cmn_space_tiny"
@@ -92,31 +92,31 @@
                 android:src="@drawable/eye_asl"/>
 
             <co.early.password123.ui.common.widgets.PercentBar
-                android:id="@+id/pwchoose_initbar_animatedprogbar"
+                android:id="@+id/initialisingPercentbar"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/cmn_space_small"
                 android:layout_marginStart="@dimen/percentbar_inlay"
                 android:layout_marginEnd="@dimen/percentbar_inlay"
-                android:layout_alignEnd="@id/pwchoose_password_edittext"
-                android:layout_alignStart="@id/pwchoose_password_edittext"
-                android:layout_below="@id/pwchoose_password_edittext" />
+                android:layout_alignEnd="@id/passwordEditText"
+                android:layout_alignStart="@id/passwordEditText"
+                android:layout_below="@id/passwordEditText" />
 
             <ImageView
-                android:id="@+id/pwchoose_info_img"
+                android:id="@+id/infoImg"
                 android:layout_width="@dimen/icon_size"
                 android:layout_height="@dimen/icon_size"
-                android:layout_alignEnd="@id/pwchoose_password_edittext"
-                android:layout_below="@id/pwchoose_password_edittext"
+                android:layout_alignEnd="@id/passwordEditText"
+                android:layout_below="@id/passwordEditText"
                 android:padding="@dimen/cmn_space_small"
                 android:src="@drawable/info_outline_black"
                 android:tint="@color/colorAccent" />
 
             <ProgressBar
-                android:id="@+id/pwchoose_busy_progressbar"
+                android:id="@+id/busyProgbar"
                 android:layout_width="@dimen/icon_size"
                 android:layout_height="@dimen/icon_size"
-                android:layout_alignEnd="@id/pwchoose_password_edittext"
-                android:layout_below="@id/pwchoose_password_edittext"
+                android:layout_alignEnd="@id/passwordEditText"
+                android:layout_below="@id/passwordEditText"
                 android:indeterminate="true"
                 android:padding="@dimen/cmn_space_small"
                 android:progressTint="@color/colorAccent" />
@@ -125,9 +125,9 @@
                 android:id="@+id/pwchoose_debug_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@id/pwchoose_password_edittext"
-                android:layout_toStartOf="@+id/pwchoose_cloud_img"
-                android:layout_below="@id/pwchoose_password_edittext"
+                android:layout_alignStart="@id/passwordEditText"
+                android:layout_toStartOf="@+id/cloudImg"
+                android:layout_below="@id/passwordEditText"
                 android:layout_gravity="start"
                 android:layout_marginEnd="@dimen/cmn_space_medium"
                 android:layout_marginStart="@dimen/cmn_space_medium"
@@ -141,8 +141,8 @@
                 android:id="@+id/pwchoose_warning_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@id/pwchoose_password_edittext"
-                android:layout_below="@id/pwchoose_password_edittext"
+                android:layout_alignStart="@id/passwordEditText"
+                android:layout_below="@id/passwordEditText"
                 android:layout_gravity="start"
                 android:layout_marginStart="@dimen/cmn_space_medium"
                 android:maxWidth="@dimen/cmn_space_extra_large"
@@ -150,14 +150,14 @@
                 android:paddingTop="@dimen/cmn_space_small">
 
                 <TextView
-                    android:id="@+id/pwchoose_warning_textview"
+                    android:id="@+id/warningText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/cmn_textsize_small"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/pwchoose_warningdetail_textview"
+                    android:id="@+id/warningDetailText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/cmn_textsize_small" />
